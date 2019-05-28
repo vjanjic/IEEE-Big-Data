@@ -29,14 +29,44 @@ This paper makes the following concrete research contributions:
 
 \section{Serums Tool-Chain For Smarth Health Centre Systems}
 
-\noindent Figure~\ref{fig:serumsTools} gives an overview of the \emph{Serums} tool chain and the overall process of accessing and using the smart health centres that will be based on it. The core of it is the centralised database of the smart patient records. These records contain all information about the patients, from static information such as date of birth, gender and contact information, to vital information such as weight, body mass index, allergies, to dynamic information about treatments and examinations. 
-
-
-\begin{figure}[h!]
+\begin{figure}
     \includegraphics[scale=0.3]{images/SerumsTools.pdf}
     \caption{The overview of \emph{Serums} tool-chain}
     \label{fig:serumsTools}
 \end{figure}
+
+\noindent Figure~\ref{fig:serumsTools} gives an overview of the \emph{Serums} tool chain and the overall process of accessing and using the smart health centres that will be based on it. The core of it is the centralised database of \emph{smart patient records} (see Section~\ref{sec:smartrecords}). These records contain all information about the patients, from static information such as date of birth, gender and contact information, to vital information such as weight, body mass index, allergies, to dynamic information about treatments and examinations. While we assume that all the records are stored in one location, the data that they refer to might reside in different distributed data bases, i.e.~the records can contain \emph{remote pointers}. Some of the data for the records will be collected from within the healtcare system over trusted networks, while the other may be collected from the personal heatlh monitoring devices from patient's home or workplace. The latter data may need to be sent over untrusted networks and, hence, needs to be secured using \emph{data masking and encryption} mechanisms.
+
+For the purposes of developing and testing the complete infrastructure, it might be preferable to use \emph{synthetic} instead of real patient data, to avoid any privacy and security concerns. \emph{Data fabrication} (See Section~\ref{sec:datafabrication}) technology allows us to rapidly generate large volumes of the data that is the same in terms structure as the real data, but the fields of which are synthetically generated. The strict format of the smart patient records, with formally defined rules about the values of each field and relationships between different fields, allows this process to be performed automatically. 
+
+The data is accessed using \emph{secure authentication and authorisation} mechanisms (see Section~\ref{sec:authentication}). \textbf{VJ: Add a few sentence of why we need this and how it works}. As an additional layer of protection, the \emph{blockchain database} serves to control the access rights of the authorised agents to the patient records. Different agents will have different level of permissions, according to GDPR and other regulations. For example, the patient will have full access to its record, while any specialist will be able to access only the parts of the record that are relevant to the eximanation and diagnosis that they are to make. Insurers will have access to the medical history of the patient, but not to all the details about examinations and treatments.
+
+Finally, different kinds of analysis will need to performed on patient data, for the diagnostic and treatement predictions. Since the data in the patient records is distributed, the analytics will also need to be performed in distributed way. We need to make sure that no sensitive information is revealed by communicating this data between the central patient record database and the analytics model (which may reside, e.g., in the cloud). Additionally, we need to ensure that the analytics model itself does not accidentally leak any sensitive information. For this purpose, we are in the process of developing \emph{privacy-preserving distributed deep-learning analytics models} for data analysis (see Section~\ref{sec:dataanalysis}).
+
+\section{Serums Technologies}
+
+\subsection{Smart Patient Records}
+\label{sec:smartrecords}
+
+\subsection{Authentication and Authorisation}
+\label{sec:authentication}
+
+\subsection{Blockchain Database}
+\label{sec:blockchain}
+
+\subsection{Distributed Privacy-Preserving Data Analytics}
+\label{sec:dataanalysis}
+
+\subsection{Data Fabrication}
+\label{sec:datafabrication}
+
+\section{Evaluation}
+
+\subsection{Use Case Description}
+\label{usecase}
+
+
+
 
 
 \subsection*{Notes}
