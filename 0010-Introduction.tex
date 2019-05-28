@@ -1,5 +1,5 @@
 \noindent
-The healthcare systems of the future will be highly decentralised, integrating home-, work- and environment-based monitoring into the hospital diagnostic systems, thus reducing costs and travel-associated risks while allowing patients to get better medical treatment (Figure~\ref{fig:dataExch}). As a consequence, medical data will need to be collected from a variety of sources and exchanged in a variety of ways, including over public networks that cannot be implicitly trusted. At the same time, we have more and more strict regulations about ownership and access rights for the patient data. Trans-national standards for data protection, such as GDPR~\cite{gdpr}, will need to be combined with local regulations, giving very strict rules about who is allowed to access what data. Complying with these rules while, at the same time, facilitating data exchange and analytics in much more distributed way will be the main challenge for the modern healtcare systems.  
+The healthcare systems of the future will be highly decentralised, integrating home-, work- and environment-based monitoring into the hospital diagnostic systems, thus reducing costs and travel-associated risks while allowing patients to get better medical treatment (Figure~\ref{fig:dataExch}). As a consequence, medical data will need to be collected from a variety of sources and exchanged in a variety of ways, including over public networks that cannot be implicitly trusted. At the same time, we have more and more strict regulations about ownership and access rights for the patient data. Trans-national standards for data protection, such as GDPR~\cite{gdpr}, will need to be combined with local regulations, giving very strict rules about who is allowed to access what part of patient data. Complying with these rules while, at the same time, facilitating data exchange and analytics in decentralised way will be the main challenge for the future healtcare systems.
 
 \begin{figure}[h!]
     \centering
@@ -8,6 +8,35 @@ The healthcare systems of the future will be highly decentralised, integrating h
     \label{fig:dataExch}
 \end{figure}
 
+In this paper, we describe a methodology that will be developed over the course of the ongoing \emph{Serums: Securing Medical Data in Smart Patient-Centric Healthcare Systems} EU H2020 project and that will address the issues of safe, secure and confidential storage, access, communication and analysis of the medical data in future-generation smart health centers. Our main goal is to put patients at the centre of future healthcare provision, enhancing their personal care and maximising the quality of treatment that they will receive, while securing trust in the security and privacy of their confidential medical data. To this end, we aim to develop a complete tool-chain that will ensure security and privacy of data over its whole lifetime, from collection and storage to the distributed analytics.
+
+To reduce the scope of the paper, we restrict our attention to a subset of all \emph{Serums} technologies. We propose a universal format for patient records, the aim for which is to allow uniform representation of patient data accross different use cases, and describe its implementation using the \emph{data vault} concept from data science. We also describe authentication and authorisation mechanisms to access these records, together with application of blockchain technology to control permissions and ensure only the allowed agents are allowed to access the relevant parts of patient records. We then describe a novel, \emph{privacy-preserving} data analytics mechanisms to analyse the data, while making sure that the analytics model does not accidentally leak any sensitive information. Finally, we present the \emph{data fabrication} methodology that allows us to generate, based on strict format of the smart patient records and rules for dependencies between its elements, synthetic but realistic data that will be used for rapid development and stress-testing of the \emph{Serums} technologies.
+
+
+This paper makes the following concrete research contributions:
+\begin{itemize}
+\item Contribution 1
+\item Contribution 2
+\item Contribution 3
+\end{itemize}
+
+\section{Background}
+
+\subsection{Issues for Modern Health Care Centres}
+
+\subsection{The Serums Project}
+
+
+\section{Serums Tool-Chain For Smarth Health Centre Systems}
+
+\noindent Figure~\ref{fig:serumsTools} gives an overview of the \emph{Serums} tool chain and the overall process of accessing and using the smart health centres that will be based on it. The core of it is the centralised database of the smart patient records. These records contain all information about the patients, from static information such as date of birth, gender and contact information, to vital information such as weight, body mass index, allergies, to dynamic information about treatments and examinations. 
+
+
+\begin{figure}[h!]
+    \includegraphics[scale=0.3]{images/SerumsTools.pdf}
+    \caption{The overview of \emph{Serums} tool-chain}
+    \label{fig:serumsTools}
+\end{figure}
 
 
 \subsection*{Notes}
