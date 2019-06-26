@@ -13,21 +13,24 @@ In this paper, we describe a methodology that will be developed over the course 
 To reduce the scope of the paper, we restrict our attention to a subset of all \emph{Serums} technologies. We propose a universal format for patient records, the aim for which is to allow uniform representation of patient data across different use cases, and describe its implementation using the \emph{data vault} concept from data science. We also describe authentication and authorisation mechanisms to access these records, together with application of blockchain technology to control permissions and ensure only the allowed agents are allowed to access the relevant parts of patient records stored and processed within a \emph{data lake}. We then describe a novel, \emph{privacy-preserving} data analytics mechanisms to analyse the data, while making sure that the analytics model does not accidentally leak any sensitive information. Finally, we present the \emph{data fabrication} methodology that allows us to generate, based on strict format of the smart patient records and rules for dependencies between its elements, synthetic but realistic data that will be used for rapid development and stress-testing of the \emph{Serums} technologies.
 
 
-This paper makes the following concrete research contributions:
-\begin{itemize}
-\item Contribution 1
-\item Contribution 2
-\item Contribution 3
-\end{itemize}
+This paper makes the following concrete research contributions: 1) Contribution 1. 2) Contribution 2. 3) Contribution 3. 4) An architecture for distributed form of differentially private learning is suggested where a privacy wall separates the private local training data from the globally shared data, and \emph{fuzzy sets} are used to aggregate robustly the local deep fuzzy models for building a global model. The privacy wall uses noise adding mechanisms to attain differential privacy for each participant's private training data and thus the adversaries have no direct access to the training data. This study suggests an $(\epsilon,\delta)-$differentially private noise adding mechanism that results in multi-fold reduction in noise magnitude over the classical Gaussian mechanism and thus leads to an increased utility for a given level of privacy. The fuzzy based approach of this study learns an efficient data representation as verified by the experiments made on benchmark data-sets. 
+
 
 \section{Background}
 
-
-\subsection{Issues for Modern Health Care Centres}
-
-\textbf{USTAN to write the first version}
+\noindent
+The emergence of Internet-of-Things (IoT) technology is having a profound effect on the development of modern healthcare systems. Traditionally, these systems have been highly centralised, with all of the health data relevant to a single patient residing in a central location within a hospital or health center, and all the measurement devices that were used to obtain this data (blood pressure monitors, CT scanners etc.) also residing within the same administrative unit. From the security and privacy point of view, collecting, storing and processing this data was relatively simple, since the data needed to be communicated over trusted networks. However, as personal medical devices become cheaper and more prevalent, it became clear that integrating home-based healthcare, with all of its advantages such as XX, into the holistic diagnostics and treatment plan for patients can significantly reduce cost and travel-associated risks while increasing the quality of healthcare provision. This, however, involves sharing of the private and confidential data across public networks, posing significantly more risk than when the data is only exchanged within a single trusted organisation. This scenario also presents a number of additional issues that need to be dealt with:
+\begin{itemize}
+    \item \emph{Ensuring Trust}. The patients must have a high degree of trust both that the smart healthcare system operates as intended, and that their privacy is fully protected.
+    \item \emph{Security, Privacy and Anonimity}. The smart healthcare system must work efficiently as a whole in order to maximise the quality of patient care, yet must simultaneously provide high levels of security and support high expectations of privacy and anonymity.
+    \item \emph{Control of the data}. The patient must have full control of their data, as required by the GDPR and other legislation, yet the data must be provided in a timely fashion to medical practitioners and specialists.
+    \item \emph{Compliance to regulations.} In order to support emergency medicine or other forms of trans-border medical treatment, the smart healthcare system must comply with with multiple, possibly conflicting, legislative frameworks.
+\end{itemize}
 
 \subsection{The Serums Project}
+\emph{Serums: Securing Medical Data in Smart Patient-Centric Healthcare Systems} is a recently-started EU H2020 project that aims to produce tools and techniques for safe and secure collection, storage, communication and processing of health data. 
+\noindent
+
 
 \textbf{USTAN to write the first version}
 

@@ -1,4 +1,4 @@
-
+    
 %% bare_conf.tex
 %% V1.3
 %% 2007/01/11
@@ -333,7 +333,8 @@
 % Read the url.sty source comments for usage information. Basically,
 % \url{my_url_here}.
 
-
+% For colouring and commenting during draft stages
+\usepackage{xcolor}
 
 
 
@@ -347,6 +348,17 @@
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 
+\newtheorem{definition}{Definition}
+\newtheorem{result}{Result}
+\newtheorem{remark}{Remark}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{tikz-network}
+\usepackage{subfigure}
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+\DeclareMathOperator{\vect}{vec}
 
 \begin{document}
 %
@@ -360,8 +372,8 @@
 % affiliations
 
 \author{\IEEEauthorblockN{Vladimir Janjic, Juliana Bowles, Andreas Francois Vermeulen}
-\IEEEauthorblockA{\textit{School of Computing, University of St Andrews} \\
-United  Kingdom \\
+\IEEEauthorblockA{\textit{School of Computer Science, University of St Andrews} \\
+St Andrews KY16 9SX, United  Kingdom \\
 \url{{vj32,jkfb,afv}@st-andrews.ac.uk}}
 \and
 \IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
@@ -370,11 +382,11 @@ United  Kingdom \\
 City, Country \\
 email address}
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address}
+\IEEEauthorblockN{Mohit Kumar, Michael Rossbory}
+\IEEEauthorblockA{\textit{Data Analysis Systems} \\
+\textit{Software Competence Center Hagenberg}\\
+Hagenberg, Austria \\
+\url{{mohit.kumar,michael.rossbory}@scch.at}}
 \and
 \IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
 \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
@@ -458,11 +470,14 @@ component; formatting; style; styling;
 
 \input{0100-smart-patient-records.tex}
 
+%\subsection{Smart Patient Records pt2}
+\input{0110-smart-patient-details.tex}
+
 \subsection{Data Fabrication}
 
 \input{0200-data-fabrication.tex}
 
-\subsection{Distributed Privacy-Preserving Data Analytics}
+\subsection{Distributed Privacy-Preserving Data Analytics}\label{sec:dataanalysis}
 
 \input{0300-data-analytics.tex}
 
@@ -480,7 +495,7 @@ component; formatting; style; styling;
 \input{0600-evaluation.tex}
 
 
-%\input{0610-usecase-zuyderland.tex}
+\input{0610-usecase-zuyderland.tex}
 
 %\input{0620-usecase-fundacioclinic.tex}
 
@@ -492,6 +507,12 @@ Chen et al. in~\cite{deepChain} present DeepChain, a framework that combines the
 Wang et al. in~\cite{healthdataQuery} describe a method to optimise the queries on medical data. 
 
 Unified Medical Language System (UMLS~\cite{UMLS}) represents an attempt to integrate and distribute key terminology, classification and coding standards, and associated resources to promote creation of more effective and interoperable biomedical information systems and services, including electronic health records.
+
+OpenEHR Specification Program~\cite{OpenEHR} provides specifications and their computable expressions to enable development and deployment of open, interoperable and computable patient-centric health information systems.
+
+Shade~\cite{shade} is a framework for Apache Spark, a cluster computing framework, that provides strong privacy guarantees for users even in the presence of an informed adversary, while still providing high utility for analysts. It includes two mechanisms - SparkLAP, which provides Laplacian perturbation based on a user's query and SparkSAM, which uses the contents of the database itself in order to calculate the perturbation.
+
+Palanisami et al.~\cite{privacyAware} present a privacy-aware data disclosure scheme that considers group privacy requirements of individuals in bipartite association graph datasets where even aggregate information about groups of individuals may be sensitive and need protection.
 
 \textbf{Everyone to contribute}
 
