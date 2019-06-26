@@ -1,12 +1,12 @@
-%\subsection{Differentially Private Distributed Deep Learning}
-%Experiments have been made on benchmark datasets to 1) study the effect of privacy level on the classification accuracy of the proposed method; 2) compare the proposed noise adding mechanism with the classical Gaussian mechanism in terms of classification accuracy; 3) compare the non-private version of the proposed distributed deep fuzzy models based classifier with the classical machine learning methods in classifying high-dimensional data.   
+\subsection{Differentially Private Distributed Deep Learning}
+Experiments have been made on benchmark datasets to 1) study the effect of privacy level on the classification accuracy of the proposed method; 2) compare the proposed noise adding mechanism with the classical Gaussian mechanism in terms of classification accuracy; 3) compare the non-private version of the proposed distributed deep fuzzy models based classifier with the classical machine learning methods in classifying high-dimensional data.   
 
-%\subsubsection{MNIST dataset}
-%The method is studied by considering a handwritten digits recognition problem with the widely used MNIST dataset. The dataset contains $28 \times 28$ sized images divided into training set of 60000 images and testing set of 10000 images. The images' pixel values were divided by 255 to normalize the values in the range from $0$ to $1$. The $28 \times 28$ normalized values of each image are flattened to an equivalent $784-$dimensional data vector.
+\subsubsection{MNIST dataset}
+The method is studied by considering a handwritten digits recognition problem with the widely used MNIST dataset. The dataset contains $28 \times 28$ sized images divided into training set of 60000 images and testing set of 10000 images. The images' pixel values were divided by 255 to normalize the values in the range from $0$ to $1$. The $28 \times 28$ normalized values of each image are flattened to an equivalent $784-$dimensional data vector.
 
-%To create a scenario for distributed learning, each class's training dataset was partitioned into $S$ number of data-subsets using $k-$means clustering and $S$ was chosen as $S =\lceil N/1000 \rceil$. Each data-subset is assumed private and the method's $(\epsilon,\delta)-$differential privacy against perturbation (in one element of data vector), with perturbation magnitude upper bounded by $d = 1$, is considered.
-%\begin{figure}
-%\centerline{ \subfigure[$\delta = 1\mathrm{e}{-6}$.]{\includegraphics[width = 1.5in]{images/M_1}\label{fig_M_1}} \hfil \subfigure[$\delta = 1\mathrm{e}{-5}$.]{\includegraphics[width = 1.5in]{images/M_2}\label{fig_M_2}}}
+To create a scenario for distributed learning, each class's training dataset was partitioned into $S$ number of data-subsets using $k-$means clustering and $S$ was chosen as $S =\lceil N/1000 \rceil$. Each data-subset is assumed private and the method's $(\epsilon,\delta)-$differential privacy against perturbation (in one element of data vector), with perturbation magnitude upper bounded by $d = 1$, is considered.
+\begin{figure}
+\centerline{ \subfigure[$\delta = 1\mathrm{e}{-6}$.]{\includegraphics[width = 1.5in]{images/M_1}\label{fig_M_1}} \hfil \subfigure[$\delta = 1\mathrm{e}{-5}$.]{\includegraphics[width = 1.5in]{images/M_2}\label{fig_M_2}}}
 \centerline{ \subfigure[$\delta = 1\mathrm{e}{-4}$.]{\includegraphics[width = 1.5in]{images/M_3}\label{fig_M_3}} \hfil \subfigure[$\delta = 1\mathrm{e}{-3}$.]{\includegraphics[width = 1.5in]{images/M_4}\label{fig_M_4}}}
 \centerline{ \subfigure[$\delta = 1\mathrm{e}{-2}$.]{\includegraphics[width = 1.5in]{images/M_5}\label{fig_M_5}} \hfil \subfigure[$\delta = 1\mathrm{e}{-1}$.]{\includegraphics[width = 1.5in]{images/M_6}\label{fig_M_6}}}
 \centerline{ \subfigure[$\delta = 0.5$.]{\includegraphics[width = 1.5in]{images/M_7}\label{fig_M_7}} \hfil \subfigure[$\delta = 0.9$.]{\includegraphics[width = 1.5in]{images/M_8}\label{fig_M_8}}}
