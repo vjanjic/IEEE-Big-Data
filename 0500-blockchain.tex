@@ -1,18 +1,18 @@
-\textbf{ACC to write the first version}
+In a nutshell, a Blockchain is a programmable, distributed ledger with an immutable history of transactions. 
+For every transaction consensus has to be reached among the participating organisations (or commonly denoted as nodes) before it can be written on the ledger. Examples of consensus protocols include Byzantine Fault Tolerance or Raft. Blockchain is programmable via the notion of a smart contract that is simply a piece of code, that is installed and executed within the Blockchain network; the execution of a smart contract's function creates a transaction. Note that the transaction is written on the ledger of each node concurrently. Consequently, the ledgers are always synchronised. If a node has some downtime, when it restarts, it automatically synchronises its ledger to the ones of the rest of the nodes. In addition, a single ledger (of a node) cannot be tampered unless the attacker can manage to infiltrate concurrently at least the majority (if not all) of the nodes, depending on the consensus protocol used.
 
-
-The access control for the SPHR is handled by Smart Contracts running on Blockchain. The following is the process flow:
-
+In the proposed architecture a Blockchain network is created where every relevant organisation (e.g a Hospital) participates. The user's permissions that control access for the SPHR are programmed using smart contracts. This allows versatility as the rules used to form the permissions can be updated whenever required. However, due to the Blockchain's nature, a single organization cannot force an update of these rules as transactions will not be able to reach consensus and inevitably will not be written on the ledger.
+The process flow for setting up access control follows:
 \begin{enumerate}
-    \item The Hospital (organisation) creates generic access rules about its data, these rules are written in the Blockchain
-    \item The Patient creates access rules about this data, these rules are written in the Blockchain
-    \item Identifier of the Patient is shared with the data requester
+    \item The Hospital (organisation) creates generic access rules about its data, these rules are implemented via smart contracts and written in the Blockchain
+    \item The Patient creates access rules about this data, these rules are implemented via smart contracts and written in the Blockchain
+    \item The patient's identifier is shared with the data requester (e.g. the Doctor)
     \item The Doctor authenticates himself
-    \item The Doctor (Individual, belonging to a group in an organisation) requests access to data about a Patient (from a Hospital). The Doctor identifier and the Patient identifier are checked against the access rules in the Blockchain (Check/Audit trail)
-    \item An access token (or decryption key) is requested from the data vault to access the Patient data
-    \item The data vault provides the access token (or decryption key)
-    \item A response is sent to the Doctor with access token (or decryption key)
-    \item The Doctor requests data about the Patient to the data vault using his access token (or decryption key)
+    \item The Doctor (Individual, belonging to a group in an organisation) requests access to data about a Patient (from a Hospital). The Doctor's identifier and the Patient's identifier are checked against the access rules in the Blockchain (Check/Audit trail)
+    \item An access token is requested from the data vault to access the Patient data
+    \item The data vault provides the access token
+    \item A response is sent to the Doctor with the access token
+    \item The Doctor requests data about the Patient to the data vault using the access token
     \item The data vault provides the requested data 
 \end{enumerate}
 
@@ -22,10 +22,3 @@ The access control for the SPHR is handled by Smart Contracts running on Blockch
     \caption{Process flow for access request}
     \label{fig:blockchain_flow}
 \end{figure}
-
-
-
-\textbf{ACC to write the first version}
-
-
-% Need write-up of smart contracts and block chain

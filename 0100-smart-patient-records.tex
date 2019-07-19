@@ -1,6 +1,9 @@
 % Sopra-Steria, Scotland, UK
 
 %\textbf{SOPRA to write the first version}
+
+%AV: Read and happy with changes.
+
 \noindent
 A good organisation of the data about individual patients is essential to the smooth and correct operation of any health center. In addition to the usual requirements for the patient data, in terms of ease of accessibility and precise structure of the records, the new legislations for privacy and ownership of the data (such as GDPR) together with highly-decentralised organisation of the modern health centers impose additional requirements for the patient data. The data about a single patient must be owned by that patient, and they are the only party that has full access to it. Other parties in the system, such as specialists, general practitioners and insurers, must have access to only parts of the data that are relevant to the services they provide (diagnostics, treatment, insurance etc.). In addition to the access restrictions, the distributed nature of the healthcare systems means that we cannot assume that all the data about a single patient is stored in one central location. Secure communication of the data, across untrusted networks, might be required at any point the patient record is accessed. To develop a generic infrastructure for safe and secure communication of distributed medical data, it is highly desirable for the patient data (including pointers to any data that resides on remote systems) to be stored in a precise and machine-readable format.
 
@@ -9,16 +12,12 @@ In the \emph{Serums} technology stack, the \emph{Smart Patient Record} represent
 \noindent
 \paragraph{Data Vault as Universal Smart Patient Record Format} We propose to use a highly-specific, Time-Person-Object-Location-Event (T-P-O-L-E) data vault as a universal smart patient record format. T-P-O-L-E data vault consists of the following hubs:
 \begin{itemize}
-    \item \emph{time}, where the dates and times of events are stored;
+    \item \emph{time}, where the dates and times of events are stored in Coordinated Universal Time;
     \item \emph{person}, where  information  about  patients  is  stored  using  the  concept of "Golden Nominal".  This type of record is a single person record with a unique reference to that person;
-    \item \emph{object}, where the objects that represent any other referable entities are stored. Examples of the objects include organisations (hospital, bank etc.), physical objects (bank cards, vehicles, hospital beds), buildings etc.; 
+    \item \emph{object}, where the objects that represent any other referable entities are stored. Examples of the objects include organisations (hospital, bank, medicine suppliers etc.), physical objects (medicine, bank cards, vehicles, hospital beds), buildings etc.; 
     \item \emph{location}, where locations (described by latitude, longitude and altitude) are stored;
     \item \emph{event}, where any event or action in the real-world is abstracted to an event. Examples of events include scans, home visits by a doctor and treatments. 
 \end{itemize}
-
-
-
-
 
 %\subsubsection{Universal Smart Patient Records}
 %\noindent
