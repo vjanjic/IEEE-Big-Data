@@ -1,0 +1,30 @@
+\section{Related Work}
+\label{sec:related}
+
+%This section highlights work related to the various areas of the Serums project. Due to the scope of the project, significant detail cannot be included here. {\color{red}[TGW: I wrote this, but it is too defensive for now.]} {\color{red} [VJ: I just wouldn't mention this at all, but we can see later :)]}
+
+%\subsection{Smart Patient Records}
+%\label{ssec:SPR}
+
+\paragraph{Smart Patient Records}
+Several projects consider definitions and implementation of universal smart patient records. Unified Medical Language System (UMLS~\cite{UMLS}) is an attempt to integrate and distribute key terminology, classification and coding standards, and associated resources to promote creation of more effective and interoperable biomedical information systems and services, including electronic health records. OpenEHR Specification Program~\cite{OpenEHR} provides specifications and their computable expressions to enable development and deployment of open, interoperable and computable patient-centric health information systems.
+
+\paragraph{Generating Synthetic Data}
+%Generating data with potentially complicated dependencies requires the use of solvers, such as constraint satisfaction problem (CSP) solvers [1], satisfiability modulo theories (SMT) solvers [2][3], or Boolean satisfiability (SAT) solvers [4].
+Several studies address generating data for given queries. Most of these approaches (e.g.~QAGen~\cite{qagen},  De La Riva et al.~\cite{riva} and Emmi et al.~\cite{emmi}) address only subsets of the SQL language as well as a simple subset of the possible data types of databases. Many of these works have performance and scalability issues as well. Adorf and Varendorff~\cite{adrof} propose a scalable solution that generates data for form-centric applications using an SMT solver. However, constraint solvers cannot deal with the variety of data types, such as decimal numbers, calendar types, and strings, this is also not an ideal solution and requires workarounds that increase complexity of the overall system and affect perfromance and quality of results. 
+
+\paragraph{Authentication}
+Recent works have investigated the influence of specific human, technology and design factors affecting user authentication preference and task performance, aiming to apply that knowledge in designing usable and personalised authentication schemes. Nicholson et al. \cite{nicholson} suggested personalizing the user authentication type based on age differences; Belk et al. \cite{belk2017} proposed an extensible authentication framework for personalizing authentication tasks based on the users' cognitive processing styles and abilities; Ma et al. \cite{ma2013} suggested personalizing user authentication types by considering users' cognitive disabilities; and Forget et al. \cite{forget2015} proposed an authentication scheme for enabling users to choose the preferred user authentication mechanism instead of providing a single user authentication type. %From the technology perspective, 
+Recent research also investigated how technology factors affect user authentication task performance and user behavior, such as device type, interaction design and virtual keyboard layout \cite{vonzezschwitz}%, schloglhofer2012}.
+
+\paragraph{Privacy of Medical Analytics}
+%\subsection{Privacy of Medical Analytics}
+%\label{ssec:analyticPrivacy}
+Shade~\cite{shade} is a framework for Apache Spark, a cluster computing framework, that provides strong privacy guarantees for users even in the presence of an informed adversary, while still providing high utility for analysts. It includes two mechanisms - SparkLAP, which provides Laplacian perturbation based on a user's query and SparkSAM, which uses the contents of the database itself in order to calculate the perturbation. Palanisami et al.~\cite{privacyAware} present a privacy-aware data disclosure scheme that considers group privacy requirements of individuals in bipartite association graph datasets where even aggregate information about groups of individuals may be sensitive and need protection.
+
+
+%\paragraph{Analytics of Medical Data} Chen et al. in~\cite{deepChain} present DeepChain, a framework that combines the distributed deep learning with blockchain technology to achieve XX. Wang et al. in~\cite{healthdataQuery} describe a method to optimise the queries on medical data. 
+
+
+
+%\textbf{Everyone to contribute}

@@ -1,100 +1,42 @@
 % Sopra-Steria, Scotland, UK
 
-%\textbf{SOPRA to write the first version}
-
-%AV: Read and happy with changes.
-
 \noindent
-A good organisation of the data about individual patients is essential to the smooth and correct operation of any health center. In addition to the usual requirements for the patient data, in terms of ease of accessibility and precise structure of the records, the new legislations for privacy and ownership of the data (such as GDPR) together with highly-decentralised organisation of the modern health centers impose additional requirements for the patient data. The data about a single patient must be owned by that patient, and they are the only party that has full access to it. Other parties in the system, such as specialists, general practitioners and insurers, must have access to only parts of the data that are relevant to the services they provide (diagnostics, treatment, insurance etc.). In addition to the access restrictions, the distributed nature of the healthcare systems means that we cannot assume that all the data about a single patient is stored in one central location. Secure communication of the data, across untrusted networks, might be required at any point the patient record is accessed. To develop a generic infrastructure for safe and secure communication of distributed medical data, it is highly desirable for the patient data (including pointers to any data that resides on remote systems) to be stored in a precise and machine-readable format.
+Good organisation of patient data is essential to the smooth and correct operation of any health system. 
+%This includes the traditional requirements of
+%ease of accessibility and precise structure of the records.
+Furthermore, new legislation for privacy and ownership of the data (such as GDPR) together with a highly-decentralised organisation of modern health providers impose additional requirements for health data. Ideally, patient data should be owned by the patient, and only they have full access to their data. Other system users, such as specialists, general practitioners and insurers, are expected to have access to parts of the data relevant to the services they provide (e.g.~diagnostics, treatment, insurance etc.). In addition to access restrictions, the distributed nature of health systems means that we cannot assume that data is stored in one central location. Secure communication of data across untrusted networks might be required at any point the patient record is accessed. To develop a generic infrastructure for safe and secure communication of distributed medical data, it is highly desirable for the patient data (including pointers to any data that resides on remote systems) to be stored in a precise and machine-readable format.
 
-In the \emph{Serums} technology stack, the \emph{Smart Patient Record} represent a central point for any information about a single patient. These records aggregate a complete medical history for a single patient across all approved healthcare providers. The information in a single record includes both relatively static information (such as name, age, address, type of insurance, allergies) and highly dynamic information (such as undergoing treatments, results of scans and hospital admissions). For each healthcare institution, smart patient records will reside in a \emph{Smart Healthcare Data Lake} (see Figure XX). \emph{Smart Patient Record Format} represents meta-data that describes the data in the records. One of the main goals of the \emph{Serums} project is to propose a \emph{universal} format for the patient records, that will cover data from all the considered use cases and will be applicable also to the future healthcare systems.
+In the \emph{SERUMS} technology tool-chain, the \emph{Smart Patient Record} represents a central information source for information about patients registered in Europe. These records aggregate a complete patient medical history across approved healthcare providers. The information in a single record includes both relatively static information (such as name, age, address, type of insurance, allergies) and highly dynamic information (such as undergoing treatments, results of scans and hospital admissions). For each healthcare institution, smart patient records will reside in a \emph{Smart Healthcare Data Lake}. The \emph{Smart Patient Record Format} represents metadata that describes the data in the records. 
+%One of the main goals of the \emph{SERUMS} project is to 
+We propose a \emph{universal} format for patient records that can be used for describing different use cases within SERUMS and is applicable to future healthcare systems.
 
-\noindent
-\paragraph{Data Vault as Universal Smart Patient Record Format} We propose to use a highly-specific, Time-Person-Object-Location-Event (T-P-O-L-E) data vault as a universal smart patient record format. T-P-O-L-E data vault consists of the following hubs:
+Our universal format is based on the concept of \emph{data vault}~\cite{Inmon2015}, which consists of \emph{hubs} (unique business keys), \emph{links} (that represent associations between hubs) and \emph{satellites} (where attributes of the hubs and links are stored). 
+%\subsubsection{Data Vault}
+%
+%A \emph{data vault} defines guidelines on how to organise the tables and relationships within a database system,  
+%As such, it can work on top of any database system such as PostgreSQL, a distributed file system such as Hadoop, or even a NoSQL database such as MongoDB. 
+%and has  been  designed  to  take  in  data  from  disparate sources and systems and centralise the data in a non-destructive manner. End users do not interact directly with the raw data in the database, but with a layer of cleansed data which is produced on top in the form of a data warehouse. The data vault model is comprised of  \emph{hubs} (that  contain  a  list  of  unique  business  keys  with  low  propensity  to change), \emph{links} (that represent associations or transactions between hubs) and \emph{satellites} (where temporal and descriptive attributes of the hubs and links are stored).
+%
+%We have chosen to use the data vault as the format to represent patient records because it supports a structure that stores data in a history preserving methodology. 
+%using Disciplined Agile Deliveries (DAD) {\color{red}[VJ: Citation?]}. 
+%The long-term functionality of the data vault can evolve as requirements change. %The natural hub-link-satellite structure empowers the 
+%Furthermore, it makes it possible to use an insert-only data loading methodology to merge parallel data sources together and introduce the requirements rapidly as information becomes available from the various health care providers.
+%
+%VJ : This was all pretty much said above
+%AV : Accepted and now marked for removal from document
+%The \emph{data vault} format supports both static and dynamic patient data and can cover the complete data cycle of the patients' interaction with the system. For example, when a patient is admitted to hospital, their current status may change rapidly (and their diagnosis). The data vault enables to record how the information becomes available from the systems. Therefore, on admission to the hospital, a patient is registered with a record that supports both static (and immutable) data and dynamic data that covers the ever-changing parts of their interactions with the health systems, making the history of the interactions immutable and relevant at all times during the patients visit.
+%%
+%
+%
+%\subsubsection{T-P-O-L-E Data Vault as Universal Smart Patient Record Format} \label{sec:tpole}
+The general data vault has unlimited types of hubs, links and satellites to model real-world data. The SERUMS project has introduced a more limited type of hub, link and satellite classification \cite{Linstedt2012} to force a more generalised view of all data sources. This will support scaling \cite{Linstedt2016} of the data vault. We propose a \emph{Time-Person-Object-Location-Event (T-P-O-L-E)} data vault as a universal smart patient record format, such that:
+%T-P-O-L-E data vault consists of the following hubs.
+
 \begin{itemize}
-    \item \emph{time}, where the dates and times of events are stored in Coordinated Universal Time;
-    \item \emph{person}, where  information  about  patients  is  stored  using  the  concept of "Golden Nominal".  This type of record is a single person record with a unique reference to that person;
-    \item \emph{object}, where the objects that represent any other referable entities are stored. Examples of the objects include organisations (hospital, bank, medicine suppliers etc.), physical objects (medicine, bank cards, vehicles, hospital beds), buildings etc.; 
-    \item \emph{location}, where locations (described by latitude, longitude and altitude) are stored;
-    \item \emph{event}, where any event or action in the real-world is abstracted to an event. Examples of events include scans, home visits by a doctor and treatments. 
+    \item \emph{Time}: the dates and times of events are stored in Coordinated Universal Time.
+    \item \emph{Person}: information  about  patients  is  stored  using  the  concept of "Golden Nominal".  This type of record is a single person record with a unique reference to that person.
+    \item \emph{Object}: other referable entities that are stored, including organisations (hospital, bank, medicine suppliers etc.), physical objects (medicine, bank cards, vehicles, hospital beds), buildings etc.
+    \item \emph{Location}: described by latitude, longitude and altitude \cite{Li2016a}.
+    \item \emph{Event}: an abstraction of any event or action in the real-world, including scans, home visits by a doctor and treatments. 
 \end{itemize}
-
-%\subsubsection{Universal Smart Patient Records}
-%\noindent
-%The universal smart patient record is the patient owned single-truth record we formulate by aggregating a European citizen's complete health history across all his approved healthcare providers. The Serums consortium's solution then uses advance security to protect the information in a cross-country configuration. 
-
-%\subsubsection{Smart Healthcare Data Lake}
-
-%The Smart Healthcare Patient record is the core base for the proposed Universal Healthcare System. Universal health care is a system that provides quality medical services to all citizens.
-
-%\subsubsection{Spain - FCRB}
-%Spain has a publicly funded healthcare system and a small private sector. 
-
-%\subsubsection{Netherlands - Zuyderland}
-
-%The Netherlands has a mixed public and private healthcare system
-
-%\subsubsection{United Kingdom - NHS}
-
-%\url{https://www.datadictionary.nhs.uk/}
-
-%The information in your records can include your:
-%name, age and address
-%health conditions
-%treatments and medicines
-%allergies and past reactions to medications
-%tests, scans and x-ray results
-%lifestyle information, such as whether you smoke or drink
-%hospital admission and discharge information
-
-%Each NHS Number is made up of 10 digits shown in a 3-3-4 format.
-
-%\subsubsection{Smart Healthcare Data Vault}
-%\label{sec:smdv}
-%The Healthcare Data Vault that we are using is a Time-Person-Object-Location-Event (T-P-O-L-E) data vault. %This type of data vault is an abstraction of the real-world activities into only five core data vault hubs.
-
-%\begin{itemize}
-%    \item Time
- %   The time hub supports ISO 8601 date and time formats. Example: 2019-06-10T21:02:57+00:00
-    
-  %  \item Person
-   % The golden nominal system for any person in that data vault is unique combination of:
-    
-    %\begin{itemize}
-     %   \item First Name
-      %  \item Middle Name
-       % \item Last Name
-    %    \item Data of Birth
-    %    \item Place of Birth
-    %\end{itemize}
-    
-    %\item Object
-    %Any non=person items is classification into this Hub.
-    
-    %\item Locations
-    %The Location Hub stores using ISO 6709.
-    %\begin{itemize}
-    %    \item latitude
-     %   \item longitude 
-     %   \item altitude
-    %\end{itemize}
-    
-    %\item Event
-    %Any event or action in the real-world is abstracted to an event. Examples of events are:
-    %\begin{itemize}
-    %    \item Doctor visit
-    %    \item Take pills
-    %\end{itemize}
-%\end{itemize}
-
-%\subsubsection{Smart Healthcare Data Warehouse}
-%\label{sec:smdw}
-
-%\textbf{VJ: Does this matter?}
-%The Healthcare Data Warehouse is the single analytics view of the Smart Healthcare Data Vault \ref{sec:smdv} that converts the data vault into a storage structure that enable the easy query of the various data attributes and insights across the Smart Healthcare System to enable a enhanced view for the patient in a secured ecosystem.
-
-%\subsubsection{Smart Healthcare Data Mart}
-%\textbf{VJ: Or this?}
-%The distribution of approved data set is generated with a non-fungible token (NFT) that enables the protection by a special type of cryptography token which represents unique smart contract for data sharing within the Smart Healthcare System.
-
-%The patients, medical staff and organisations will receive a Self-sovereign identity that will allow members to maintain a single digital identity across multiple healthcare platforms while selecting the information they wish to share on each.
+The T-P-O-L-E data vault supports a future-proof design of the healthcare solution by enabling adding data at any point with full history capabilities. This model is the basis for the single-truth records data sharing and processing engine of the SERUMS project. The solution then uses advanced security to protect the information in a cross-country configuration respecting patient consent. This health record system will be able to support evolving coordinated services~\cite{Silow-Carroll2012} 

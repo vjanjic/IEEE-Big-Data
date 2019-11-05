@@ -1,0 +1,8 @@
+
+%This sections overviews approaches used to verify and validate the above technologies as used in practice in the SERUMS project.
+
+%The data fabrication uses rules-guided techniques and so is already bounded by the rules for correctness. However, this alone does not ensure that the synthetic data is indistinguishable from real patient data. Thus, within the scope of the SERUMS project a machine learning application will be developed that attempts to distinguish synthetic data from real patient records. This will then be tested against the fabricated data (within a purely private setting where no data can be leaked) to validate that the synthetic data is indistinguishable from real data.
+
+%Similar to data fabrication, the distributed privacy-preserving data analytics have privacy built into their construction by design. Thus, to validate this aspect of the project, the focus will be on ensuring the implementation of the privacy-preserving data analytics meet the specifications by construction.
+
+%The user authentication and smart contracts both allow for a combination of formal verification and testing. Formally the systems can be modelled and these models checked for correct behaviour, or absence of incorrect behaviour \cite{MMR2017BC}. This can be combined with testing approaches such as fuzzing that can identify unexpected behaviours that would violate correctness and be beyond the capability of some formal methods \cite{DBLP:journals/corr/abs-1807-03932}.

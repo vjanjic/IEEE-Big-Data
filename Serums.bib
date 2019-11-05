@@ -18,6 +18,108 @@
   OPTannote = 	 {}
 }
 
+@InProceedings{adrof,
+author="Adorf, Hans-Martin
+and Varendorff, Martin",
+editor="Winkler, Dietmar
+and Biffl, Stefan
+and Bergsmann, Johannes",
+title="Constraint-Based Automated Generation of Test Data",
+booktitle="Software Quality. Model-Based Approaches for Advanced Software and Systems Engineering",
+year="2014",
+publisher="Springer International Publishing",
+address="Cham",
+pages="199--213",
+abstract="We present a novel method for automatically generating artificialtest data that are particularly suited for testing form-centric software applications with several thousand input fields. The complex validation rules for user input are translated to a constraint satisfaction problem (CSP), which is solved using an off-the-shelf SMT-solver. In order to exert pressure onto the software under test, the generated test data have to incorporate extreme and special values (ESVs) for each field. The SMT-solver is aided by a sophisticated graph-based cluster algorithm and by other heuristic methods in order to reduce the complexity of the CSPs. With further optimizations, the test data generator now routinely generates a complete set of test data records for large form-centric applications within less than two hours. The test data generator described here is operationally being used for automated tests of form-centric Web-applications, within an iterative development process emphasizing very early testing of software applications.",
+isbn="978-3-319-03602-1"
+}
+
+@inproceedings{emmi,
+ author = {Emmi, Michael and Majumdar, Rupak and Sen, Koushik},
+ title = {Dynamic Test Input Generation for Database Applications},
+ booktitle = {Proc. ISSTA '07},
+ year = {2007},
+ isbn = {978-1-59593-734-6},
+ location = {London, United Kingdom},
+ pages = {151--162},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/1273463.1273484},
+ doi = {10.1145/1273463.1273484},
+ acmid = {1273484},
+ publisher = {ACM},
+ %address = {New York, NY, USA},
+ keywords = {automatic test generation, concolic testing, database applications, directed random testing},
+}
+
+@inproceedings{riva,
+ author = {de la Riva, Claudio and Su\'{a}rez-Cabal, Mar\'{\i}a Jos{\'e} and Tuya, Javier},
+ title = {Constraint-based Test Database Generation for SQL Queries},
+ booktitle = {Proceedings of the 5th Workshop on Automation of Software Test},
+ series = {AST '10},
+ year = {2010},
+ isbn = {978-1-60558-970-1},
+ location = {Cape Town, South Africa},
+ pages = {67--74},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/1808266.1808276},
+ doi = {10.1145/1808266.1808276},
+ acmid = {1808276},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {MCDC, SQL coverage, SQLFpc, alloy toolset, database testing, software testing, test database generation},
+}
+
+@INPROCEEDINGS{khalek, 
+author={S. {Abdul Khalek} and B. {Elkarablieh} and Y. {O. Laleye} and S. {Khurshid}}, 
+booktitle={2008 23rd IEEE/ACM International Conference on Automated Software Engineering}, 
+title={Query-Aware Test Generation Using a Relational Constraint Solver}, 
+year={2008}, 
+volume={}, 
+number={}, 
+pages={238-247}, 
+keywords={constraint handling;program debugging;program testing;public domain software;query processing;relational databases;SQL;query-aware test generation;relational constraint solver;black-box testing;database management systems;Alloy tool-set;SQL query;Alloy Analyzer;query-aware data generation;ADUSA;bugs detection;open-source database management system;commercial database management system;Metals;Databases;Testing;Relational databases;Analytical models;Generators;Computer bugs}, 
+doi={10.1109/ASE.2008.34}, 
+ISSN={}, 
+month={Sep.},}
+
+@inproceedings{qagen,
+ author = {Binnig, Carsten and Kossmann, Donald and Lo, Eric and \"{O}zsu, M. Tamer},
+ title = {QAGen: Generating Query-aware Test Databases},
+ booktitle = {Proceedings of the 2007 ACM SIGMOD International Conference on Management of Data},
+ series = {SIGMOD '07},
+ year = {2007},
+ isbn = {978-1-59593-686-8},
+ location = {Beijing, China},
+ pages = {341--352},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/1247480.1247520},
+ doi = {10.1145/1247480.1247520},
+ acmid = {1247520},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {database, query processing, symbolic database, symbolic execution, symbolic query processing, testing},
+} 
+
+@article{bruno,
+ author = {Bruno, Nicolas and Chaudhuri, Surajit and Thomas, Dilys},
+ title = {Generating Queries with Cardinality Constraints for DBMS Testing},
+ journal = {IEEE Trans. on Knowl. and Data Eng.},
+ issue_date = {December 2006},
+ volume = {18},
+ number = {12},
+ month = dec,
+ year = {2006},
+ issn = {1041-4347},
+ pages = {1721--1725},
+ numpages = {5},
+ url = {http://dx.doi.org/10.1109/TKDE.2006.190},
+ doi = {10.1109/TKDE.2006.190},
+ acmid = {1176190},
+ publisher = {IEEE Educational Activities Department},
+ address = {Piscataway, NJ, USA},
+ keywords = {Query generation, Query generation, database testing, cardinality constraints., cardinality constraints., database testing},
+} 
+
 @InProceedings{healthdataQuery,
   author = 	 {Yueyao Wang, Qinmin Hu, Yang Song and Liang He},
   title = 	 {{Potentiality of Healthcare Big data: Improving Search by Automatic Query
@@ -55,7 +157,7 @@ Reformulation}},
 
 @INPROCEEDINGS{shade, 
 author={A. {Heifetz} and V. {Mugunthan} and L. {Kagal}}, 
-booktitle={2017 IEEE International Conference on Big Data (Big Data)}, 
+booktitle={Proc. IEEE Big Data 2017}, 
 title={Shade: A Differentially-Private Wrapper for Enterprise Big Data}, 
 year={2017}, 
 volume={}, 
@@ -63,24 +165,32 @@ number={},
 pages={1033-1042}, 
 doi={10.1109/BigData.2017.8258027}, 
 ISSN={}, 
-month={Dec},}
+%month={Dec},
+publisher = {IEEE}
+}
 
 @INPROCEEDINGS{privacyAware, 
 author={B. {Palanisamy} and C. {Li} and P. {Krishnamurthy}}, 
-booktitle={2017 IEEE International Conference on Big Data (Big Data)}, 
-title={{Group Privacy-Aware Disclosure of Association Graph Data}}, 
+booktitle={Proc. IEEE Big Data 2017}, 
 year={2017}, 
 volume={}, 
 number={}, 
 pages={1043-1052}, 
 ISSN={}, 
-month={Dec},}
+%month={Dec},
+publisher = {IEEE}
+}
 
-@inproceedings{Kumar/IWCFS2019,
-  author    = {Mohit Kumar and Michael Rossbory and Bernhard A. Moser and Bernhard Freudenthaler},
-  title     = {Deriving An Optimal Noise Adding Mechanism for Privacy-Preserving Machine Learning},
-  booktitle = {Proceedings of the 3rd International Workshop on Cyber-Security and Functional Safety in Cyber-Physical  ({IWCFS} 2019), August 26-29, 2019, Linz, Austria},
-  year      = {2019 (in-press)},}
+
+@InProceedings{Kumar/IWCFS2019,
+author="Kumar, Mohit and Rossbory, Michael and Moser, Bernhard A. and Freudenthaler, Bernhard",
+editor="Anderst-Kotsis, Gabriele and Tjoa, A Min and Khalil, Ismail",
+title="Deriving an Optimal Noise Adding Mechanism for Privacy-Preserving Machine Learning",
+booktitle="Database and Expert Systems Applications",
+year="2019",
+publisher="Springer International Publishing",
+pages="108--118",
+}
   
   @article{DBLP:journals/fttcs/DworkR14,
   author    = {Cynthia Dwork and
@@ -192,9 +302,7 @@ Institution = {California Institute of Technology},
                Christos Fidas and
                Andreas Pitsillides},
   title     = {FlexPass: Symbiosis of Seamless User Authentication Schemes in IoT},
-  booktitle = {Extended Abstracts of the 2019 {CHI} Conference on Human Factors in
-               Computing Systems, {CHI} 2019, Glasgow, Scotland, UK, May 04-09, 2019.},
-  year      = {2019},
+  booktitle = {Extended Abstracts of the CHI 2019},
   crossref  = {DBLP:conf/chi/2019a},
   url       = {https://doi.org/10.1145/3290607.3312951},
   doi       = {10.1145/3290607.3312951},
@@ -209,8 +317,7 @@ Institution = {California Institute of Technology},
                Christos Fidas and
                Andreas Pitsillides},
   title     = {Picture Passwords in Mixed Reality: Implementation and Evaluation},
-  booktitle = {Extended Abstracts of the 2019 {CHI} Conference on Human Factors in
-               Computing Systems, {CHI} 2019, Glasgow, Scotland, UK, May 04-09, 2019.},
+  booktitle = {Extended Abstracts of the CHI 2019},
   year      = {2019},
   crossref  = {DBLP:conf/chi/2019a},
   url       = {https://doi.org/10.1145/3290607.3313076},
@@ -227,8 +334,7 @@ Institution = {California Institute of Technology},
                Andreas Pitsillides},
   title     = {On the Accuracy of Eye Gaze-driven Classifiers for Predicting Image
                Content Familiarity in Graphical Passwords},
-  booktitle = {Proceedings of the 27th {ACM} Conference on User Modeling, Adaptation
-               and Personalization, {UMAP} 2019, Larnaca, Cyprus, June 9-12, 2019.},
+  booktitle = {Proc. UMAP 2019},
   pages     = {201--205},
   year      = {2019},
   crossref  = {DBLP:conf/um/2019},
@@ -236,14 +342,14 @@ Institution = {California Institute of Technology},
   doi       = {10.1145/3320435.3320474},
   timestamp = {Mon, 10 Jun 2019 17:33:48 +0200},
   biburl    = {https://dblp.org/rec/bib/conf/um/ConstantinidesB19},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  publisher = {ACM}
 }
 
 @inproceedings{nicholson,
  author = {Nicholson, James and Coventry, Lynne and Briggs, Pam},
  title = {Age-related Performance Issues for PIN and Face-based Authentication Systems},
- booktitle = {Proceedings of the SIGCHI Conference on Human Factors in Computing Systems},
- series = {CHI '13},
+ booktitle = {Proc. CHI '13},
  year = {2013},
  isbn = {978-1-4503-1899-0},
  location = {Paris, France},
@@ -253,15 +359,14 @@ Institution = {California Institute of Technology},
  doi = {10.1145/2470654.2470701},
  acmid = {2470701},
  publisher = {ACM},
- address = {New York, NY, USA},
+ %address = {New York, NY, USA},
  keywords = {authentication, graphical codes, older adults, usable security},
 } 
 
 @inproceedings{vonzezschwitz,
  author = {von Zezschwitz, Emanuel and De Luca, Alexander and Hussmann, Heinrich},
  title = {Honey, I Shrunk the Keys: Influences of Mobile Devices on Password Composition and Authentication Performance},
- booktitle = {Proceedings of the 8th Nordic Conference on Human-Computer Interaction: Fun, Fast, Foundational},
- series = {NordiCHI '14},
+ booktitle = {Proc. NordiCHI '14},
  year = {2014},
  isbn = {978-1-4503-2542-4},
  location = {Helsinki, Finland},
@@ -271,6 +376,198 @@ Institution = {California Institute of Technology},
  doi = {10.1145/2639189.2639218},
  acmid = {2639218},
  publisher = {ACM},
- address = {New York, NY, USA},
+ %address = {New York, NY, USA},
  keywords = {mobile devices, passwords, performance, usability},
 } 
+
+@INPROCEEDINGS{forget2015,
+author = {Forget, Alain and Chiasson, Sonia and Biddle, Robert},
+title = {[Paper] Choose Your Own Authentication},
+booktitle = {New Security Paradigm Workshop ({NSPW})},
+year = {2015},
+organization = {ACM},
+note = {Conference Papers}
+}
+
+@article{belk2017,
+ author = {Belk, Marios and Fidas, Christos and Germanakos, Panagiotis and Samaras, George},
+ title = {The Interplay Between Humans, Technology and User Authentication},
+ journal = {Comput. Hum. Behav.},
+ issue_date = {November 2017},
+ volume = {76},
+ number = {C},
+ month = nov,
+ year = {2017},
+ issn = {0747-5632},
+ pages = {184--200},
+ numpages = {17},
+ url = {https://doi.org/10.1016/j.chb.2017.06.042},
+ doi = {10.1016/j.chb.2017.06.042},
+ acmid = {3172651},
+ publisher = {Elsevier Science Publishers B. V.},
+ address = {Amsterdam, The Netherlands, The Netherlands},
+ keywords = {Field dependence-independence, Human cognitive differences, Knowledge-based user authentication, Task performance, User study},
+} 
+
+@article{ma2013,
+ author = {Ma, Yao and Feng, Jinjuan and Kumin, Libby and Lazar, Jonathan},
+ title = {Investigating User Behavior for Authentication Methods: A Comparison Between Individuals with Down Syndrome and Neurotypical Users},
+ journal = {ACM Trans. Access. Comput.},
+ issue_date = {July 2013},
+ volume = {4},
+ number = {4},
+ month = jul,
+ year = {2013},
+ issn = {1936-7228},
+ pages = {15:1--15:27},
+ articleno = {15},
+ numpages = {27},
+ url = {http://doi.acm.org/10.1145/2493171.2493173},
+ doi = {10.1145/2493171.2493173},
+ acmid = {2493173},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Cognitive disability, Down syndrome, authentication},
+} 
+
+@inproceedings{schloglhofer2012,
+ author = {Schl\"{o}glhofer, Roland and Sametinger, Johannes},
+ title = {Secure and Usable Authentication on Mobile Devices},
+ booktitle = {Proceedings of the 10th International Conference on Advances in Mobile Computing \&\#38; Multimedia},
+ series = {MoMM '12},
+ year = {2012},
+ isbn = {978-1-4503-1307-0},
+ location = {Bali, Indonesia},
+ pages = {257--262},
+ numpages = {6},
+ url = {http://doi.acm.org/10.1145/2428955.2429004},
+ doi = {10.1145/2428955.2429004},
+ acmid = {2429004},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Android, authentication, lock screen, mobile devices, security, usability},
+} 
+
+@inproceedings{Fredrikson:2015:MIA:2810103.2813677,
+ author = {Fredrikson, Matt and Jha, Somesh and Ristenpart, Thomas},
+ title = {Model Inversion Attacks That Exploit Confidence Information and Basic Countermeasures},
+ booktitle = {Proc. CCS '15},
+ year = {2015},
+ location = {Denver, Colorado, USA},
+ pages = {1322--1333},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2810103.2813677},
+ doi = {10.1145/2810103.2813677},
+ acmid = {2813677},
+ publisher = {ACM}
+ %address = {New York, NY, USA},
+}
+
+
+@inproceedings{Abadi:2016:DLD:2976749.2978318,
+ author = {Abadi, Martin and Chu, Andy and Goodfellow, Ian and McMahan, H. Brendan and Mironov, Ilya and Talwar, Kunal and Zhang, Li},
+ title = {Deep Learning with Differential Privacy},
+ booktitle = {Proc. CCS '16},
+ year = {2016},
+ isbn = {978-1-4503-4139-4},
+ location = {Vienna, Austria},
+ pages = {308--318},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/2976749.2978318},
+ doi = {10.1145/2976749.2978318},
+ publisher = {ACM},
+ %address = {New York, NY, USA},
+}
+
+@inproceedings{Phan:2016:DPP:3015812.3016005,
+ author = {Phan, NhatHai and Wang, Yue and Wu, Xintao and Dou, Dejing},
+ title = {Differential Privacy Preservation for Deep Auto-encoders: An Application of Human Behavior Prediction},
+ booktitle = {Proc. AAAI '16},
+ year = {2016},
+ location = {Phoenix, Arizona},
+ pages = {1309--1316},
+ numpages = {8},
+ url = {http://dl.acm.org/citation.cfm?id=3015812.3016005},
+ publisher = {AAAI Press},
+}
+
+@incollection{Inmon2015,
+abstract = {Abstract This chapter introduces Data Vault 2.0 as a system of business intelligence. Data Vault 2.0 includes architecture, modeling, methodology, and implementation best practices and standards that work with Big Data, relational, hybrid, and NoSQL systems. This chapter is helpful to those who are looking for new methods to constructing their enterprise business intelligence (BI) solutions or those struggling with the transition to Big Data, unstructured or multistructured data. As data variety and volume grows, businesses are constantly seeking a solution for {\{}BI{\}} and data warehousing that can grow and adapt; the topics in this chapter cover how the team can be agile, what it means to include Six Sigma, total quality management (TQM), and Scrum agility for best results, all within a framework that serves the enterprise {\{}BI{\}} efforts. },
+author = {Inmon, W.H. and Linstedt, Daniel},
+booktitle = {Data Architecture: a Primer for the Data Scientist},
+doi = {10.1016/b978-0-12-802044-9.00021-0},
+title = {{Introduction to Data Vault}},
+year = {2015}
+}
+
+@incollection{Linstedt2016,
+abstract = {Abstract Scalable data warehouses, as a desired solution to some of the problems introduced in the previous chapter, have specific architectural dimensions that are explained in this chapter, including workload, data complexity, query complexity, availability and data latency. This chapter introduces the architecture of a Data Vault-based data warehouse, including the stage, data warehouse, and information mart layers. In addition, it shows how to use a business vault and other components of the proposed architecture. },
+author = {Linstedt, Daniel and Olschimke, Michael},
+booktitle = {Data Vault 2.0},
+doi = {10.1016/b978-0-12-802510-9.00002-7},
+title = {{Scalable Data Warehouse Architecture}},
+year = {2016}
+}
+
+@misc{Linstedt2012,
+author = {Linstedt, D.},
+keywords = {Data Vault},
+mendeley-tags = {Data Vault},
+title = {{Data Vault 2.0 Being Announced}},
+url = {http://danlinstedt.com/allposts/datavaultcat/data-vault-2-0-being-announced/},
+urldate = {2017-11-20},
+year = {2012}
+}
+
+@article{Silow-Carroll2012,
+abstract = {An examination of nine hospitals that recently implemented a comprehensive electronic health record (EHR) system finds that clinical and administrative leaders built EHR adoption into their strategic plans to integrate inpatient and outpatient care and provide a continuum of coordinated services. Successful implementation depended on: strong leadership, full involvement of clinical staff in design and implementation, mandatory staff training, and strict adherence to timeline and budget. The EHR systems facilitate patient safety and quality improvement through: use of checklists, alerts, and predictive tools; embedded clinical guidelines that promote standardized, evidence-based practices; electronic prescribing and test-ordering that reduces errors and redundancy; and discrete data fields that foster use of performance dashboards and compliance reports. Faster, more accurate communication and streamlined processes have led to improved patient flow, fewer duplicative tests, faster responses to patient inquiries, redeployment of transcription and claims staff, more complete capture of charges, and federal incentive payments.},
+author = {Silow-Carroll, Sharon and Edwards, Jennifer N and Rodin, Diana},
+issn = {1558-6847},
+journal = {Issue brief (Commonwealth Fund)},
+pmid = {22826903},
+title = {{Using electronic health records to improve quality and efficiency: the experiences of leading hospitals.}},
+year = {2012}
+}
+
+@misc{Li2016a,
+abstract = {Big data has now become a strong focus of global interest that is increasingly attracting the attention of academia, industry, government and other organizations. Big data can be situated in the disciplinary area of traditional geospatial data handling theory and methods. The increasing volume and varying format of collected geospatial big data presents challenges in storing, managing, processing, analyzing, visualizing and verifying the quality of data. This has implications for the quality of decisions made with big data. Consequently, this position paper of the International Society for Photogrammetry and Remote Sensing (ISPRS) Technical Commission II (TC II) revisits the existing geospatial data handling methods and theories to determine if they are still capable of handling emerging geospatial big data. Further, the paper synthesises problems, major issues and challenges with current developments as well as recommending what needs to be developed further in the near future.},
+archivePrefix = {arXiv},
+arxivId = {1511.03010},
+author = {Li, Songnian and Dragicevic, Suzana and Castro, Francesc Ant{\'{o}}n and Sester, Monika and Winter, Stephan and Coltekin, Arzu and Pettit, Christopher and Jiang, Bin and Haworth, James and Stein, Alfred and Cheng, Tao},
+booktitle = {ISPRS Journal of Photogrammetry and Remote Sensing},
+doi = {10.1016/j.isprsjprs.2015.10.012},
+eprint = {1511.03010},
+isbn = {2214-5796},
+issn = {09242716},
+keywords = {Analytics,Big data,Data handling,Geospatial,Review,Spatial modeling},
+pages = {119--133},
+title = {{Geospatial big data handling theory and methods: A review and research challenges}},
+volume = {115},
+year = {2016}
+}
+
+@article{DBLP:journals/corr/abs-1807-03932,
+  author    = {Bo Jiang and
+               Ye Liu and
+               W. K. Chan},
+  title     = {ContractFuzzer: Fuzzing Smart Contracts for Vulnerability Detection},
+  journal   = {CoRR},
+  volume    = {abs/1807.03932},
+  year      = {2018},
+  url       = {http://arxiv.org/abs/1807.03932},
+  archivePrefix = {arXiv},
+  eprint    = {1807.03932},
+  timestamp = {Mon, 24 Sep 2018 16:59:48 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1807-03932},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{MMR2017BC,
+author = {Maesa, Damiano and Mori, Paolo and Ricci, Laura},
+year = {2017},
+month = {05},
+pages = {206-220},
+title = {Blockchain Based Access Control},
+isbn = {978-3-319-59664-8},
+doi = {10.1007/978-3-319-59665-5_15}
+}

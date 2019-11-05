@@ -360,55 +360,62 @@
 \newcommand{\dd}{\mathop{}\!\mathrm{d}}
 \DeclareMathOperator{\vect}{vec}
 
+% For strikeout/editing
+\usepackage{ulem}
+\usepackage{textcomp}
+
 \begin{document}
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{Serums: Securing Medical Data in Smart Patient-Centric Healthcare Systems}
-
+\title{The {\sc SERUMS} tool-chain: Ensuring Security and Privacy of  Medical Data in Smart Patient-Centric Healthcare Systems}
+%\title{
 
 % author names and affiliations
 % use a multiple column layout for up to two different
 % affiliations
 
-\author{\IEEEauthorblockN{Vladimir Janjic, Juliana Bowles, Andreas Francois Vermeulen, Agastya Silvina}
-\IEEEauthorblockA{\textit{School of Computer Science, University of St Andrews} \\
-St Andrews, United  Kingdom \\
-\url{{vj32,jkfb,afv}@st-andrews.ac.uk}}
-\and
-\IEEEauthorblockN{Marios Belk, Andreas Pitsillides}
-\IEEEauthorblockA{\textit{Department of Computer Science, University of Cyprus} \\
-Nicosia, Cyprus \\
-\url{{belk, andreas.pitsillides}@cs.ucy.ac.cy}}
-\and
-\IEEEauthorblockN{Mohit Kumar, Michael Rossbory}
-\IEEEauthorblockA{\textit{Data Analysis Systems} \\
-\textit{Software Competence Center Hagenberg}\\
-Hagenberg, Austria \\
-\url{{mohit.kumar,michael.rossbory}@scch.at}}
-\and
-\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address}
-\and
-\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address}
-\and
-\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address}
-}
+%% VJ: Commented out the list of authors
+%\author{\IEEEauthorblockN{V. Janjic, J.K.F. %Bowles, A.F. Vermeulen, A. Silvina}
+%\IEEEauthorblockA{\textit{School of Computer Science, University of St Andrews} \\
+%St Andrews, United  Kingdom \\
+%\url{{vj32,jkfb,afv,as362}@st-andrews.ac.uk}}
+%\and
+%\IEEEauthorblockN{M. Belk, C. Fidas, A. Pitsillides}
+%\IEEEauthorblockA{\textit{Department of Computer Science, University of Cyprus} \\
+%Nicosia, Cyprus \\
+%url{{belk, fidas, andreas.pitsillides}@cs.ucy.ac.cy}}
+%\and
+%\IEEEauthorblockN{M. Kumar, M. Rossbory}
+%\IEEEauthorblockA{\textit{Data Analysis Systems} \\
+%\textit{Software Competence Center Hagenberg}\\
+%Hagenberg, Austria \\
+%\url{{mohit.kumar,michael.rossbory}@scch.at}}
+%\and
+%\IEEEauthorblockN{%4\textsuperscript{th} 
+%M. Vinov }
+%\IEEEauthorblockA{
+%\textit{dept. name of organization (of Aff.)} \\
+%\textit{IBM Research Laboratory}\\
+%Haifa, Israel\\
+%vinov@il.ibm.com}
+%\and
+%\IEEEauthorblockN{T. Given-Wilson, A. Legay}
+%\IEEEauthorblockA{%\textit{Department of Computer Science} \\
+%\textit{Universite Catholique de Louvain}\\
+%Louvain-la-Neuve, Belgium \\
+%\{thomas.given-wilson,axel.legay\}@uclouvain.be}
+%\and
+%\IEEEauthorblockN{E. Blackledge}
+%\IEEEauthorblockA{\textit{Senior Consultant} \\
+%\textit{Sopra Steria}\\
+%Edinburgh, United Kingdom \\
+%%\and
+%}
 
 % conference papers do not typically use \thanks and this command
 % is locked out in conference mode. If really needed, such as for
-% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% the acknowledgements of grants, issue a \IEEEoverridecommandlockouts
 % after \documentclass
 
 % for over three affiliations, or if they all won't fit within the width
@@ -447,8 +454,8 @@ email address}
 \end{abstract}
 
 \begin{IEEEkeywords}
-component; formatting; style; styling;
-
+%component; formatting; style; styling;
+Medical data, Smart Healthcare, Data Sharing, Privacy, Security, Personalised Medicine
 \end{IEEEkeywords}
 
 \IEEEpeerreviewmaketitle
@@ -461,18 +468,30 @@ component; formatting; style; styling;
 % 10 page IEEE 2-column format
 % single blind reviews
 
+%{\color{purple}List of things we need to check/fix across the whole paper:
+%\begin{itemize}
+%\item Capitalisation of Serums/SERUMS. Checked and done
+%\item GP/general practitioner. No GP found?
+%\item Center/centre. Done.
+%\item Choice of word for healthcare domain/health centre/hospital/etc. Checked but suggest to check again???
+%\end{itemize}
+%}
+
 \section{Introduction}
 \input{0010-Introduction.tex}
 
-\section{Serums Technologies}
+\section{SERUMS Technologies}
+\label{sec:tech}
 \subsection{Smart Patient Records}
+\label{sec:smartPatient}
 
 \input{0100-smart-patient-records.tex}
 
 %\subsection{Smart Patient Records pt2}
-\input{0110-smart-patient-details.tex}
+%\input{0110-smart-patient-details.tex}
 
 \subsection{Data Fabrication}
+\label{sec:datafabrication}
 
 \input{0200-data-fabrication.tex}
 
@@ -481,45 +500,35 @@ component; formatting; style; styling;
 \input{0300-data-analytics.tex}
 
 \subsection{Flexible User Authentication}
+\label{sec:authentication}
 \input{0400-authentication-authorisation.tex}
 
 \subsection{Blockchain}
 \input{0500-blockchain.tex}
 
-\section{Evaluation}
+%\subsection{Verification}
+%\label{ssec:verification}
+%\input{0550-verification.tex}
 
+\section{Evaluation}
 \input{0600-evaluation.tex}
 
 
-\input{0610-usecase-zuyderland.tex}
+%\input{0610-usecase-zuyderland.tex}
 
-\input{0620-usecase-fundacioclinic.tex}
+%\input{0620-usecase-fundacioclinic.tex}
 
 \input{0630-usecase-standrews.tex}
 
-\section{Related Work}
-Chen et al. in~\cite{deepChain} present DeepChain, a framework that combines the distributed deep learning with blockchain technology to achieve XX. 
-
-Wang et al. in~\cite{healthdataQuery} describe a method to optimise the queries on medical data. 
-
-Unified Medical Language System (UMLS~\cite{UMLS}) represents an attempt to integrate and distribute key terminology, classification and coding standards, and associated resources to promote creation of more effective and interoperable biomedical information systems and services, including electronic health records.
-
-OpenEHR Specification Program~\cite{OpenEHR} provides specifications and their computable expressions to enable development and deployment of open, interoperable and computable patient-centric health information systems.
-
-Shade~\cite{shade} is a framework for Apache Spark, a cluster computing framework, that provides strong privacy guarantees for users even in the presence of an informed adversary, while still providing high utility for analysts. It includes two mechanisms - SparkLAP, which provides Laplacian perturbation based on a user's query and SparkSAM, which uses the contents of the database itself in order to calculate the perturbation.
-
-Palanisami et al.~\cite{privacyAware} present a privacy-aware data disclosure scheme that considers group privacy requirements of individuals in bipartite association graph datasets where even aggregate information about groups of individuals may be sensitive and need protection.
-
-\textbf{Everyone to contribute}
+\input{0800-related-work.tex}
 
 \section{Conclusion}
 
 \input{0900-conclusion.tex}
 
-\section*{Acknowledgment}
+\section*{Acknowledgement}
 
-\input{0950-acknowledgment.tex}
-
+\input{0950-acknowledgement.tex}
 
 
 \input{0975-bibliography.tex}
